@@ -54,7 +54,7 @@ section{padding:56px 0}
 .it b{font-weight:600}
 .it small{display:block;color:var(--mut);font-size:.72rem}
 .it .p{font-weight:600;color:var(--nude2);white-space:nowrap}
-.ex{display:block;text-align:center;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nude2);background:#F1EAE0;border-radius:999px;padding:7px 12px;margin:0 auto 18px;width:max-content}
+.ex{display:block;text-align:center;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nude2);background:#F1EAE0;border-radius:999px;padding:7px 12px;margin:0 auto 18px;width:max-content;max-width:100%;text-align:center}
 .agenda{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px}
 .agenda label.t{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px}
 .agenda label.t:first-child{margin-top:0}
@@ -82,12 +82,15 @@ section{padding:56px 0}
 .info b{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nude2);margin-bottom:2px;font-weight:600}
 footer{text-align:center;padding:30px 0 90px;color:var(--mut);font-size:.74rem}
 footer img{width:160px;margin:0 auto 10px}
-.hd-r{display:flex;align-items:center;gap:10px}
-.agico{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--line);color:var(--ink);background:#fff}
+.hd-r{display:flex;align-items:center;gap:6px}
+.agico{display:inline-flex;align-items:center;gap:6px;height:38px;padding:0 10px;border-radius:999px;border:1px solid var(--ink);color:var(--ink);background:#fff;font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;white-space:nowrap}
+.agico svg{width:16px;height:16px;flex:none}
+.areabox{margin:26px 16px 0;max-width:420px;text-align:center;border:1px dashed var(--nude2);border-radius:18px;padding:18px 16px}
+.areabox p{margin:0 0 12px;font-size:.82rem;color:var(--mut)}
 </style>
 </head>
 <body>
-<header><div class="wrap"><img src="img/logo-cp.png" alt="Carol Paiva Lash Designer"><div class="hd-r"><a class="agico" href="agenda/" title="Agenda da Carol" aria-label="Agenda da Carol"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></a><a class="btn sm" href="#agendar">Agendar</a></div></div></header>
+<header><div class="wrap"><img src="img/logo-cp.png" alt="Carol Paiva Lash Designer"><div class="hd-r"><a class="agico" href="agenda/" title="Agenda da Carol" aria-label="Agenda da Carol"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><span>Área da Carol</span></a><a class="btn sm" href="#agendar">Agendar</a></div></div></header>
 
 <div class="hero"><div class="bg"></div><div class="wrap">
   <div class="eyebrow">Cílios · Sobrancelhas · Laser</div>
@@ -147,7 +150,7 @@ footer img{width:160px;margin:0 auto 10px}
     <div><b>WhatsApp</b><a href="https://wa.me/5537998361528" style="color:inherit">(37) 99836-1528</a></div>
   </div>
 </div></section>
-<footer><img src="img/logo-cp.png" alt=""><div>Carol Paiva · Lash Designer</div><div style="margin-top:14px"><a href="agenda/" style="color:inherit;opacity:.55;font-size:.72rem;text-decoration:none">Área da profissional</a></div></footer>
+<footer><img src="img/logo-cp.png" alt=""><div>Carol Paiva · Lash Designer</div><div class="areabox"><p>Área da profissional: os pedidos do site, a agenda, as clientes e o caixa da Carol.</p><a class="btn" href="agenda/">Abrir a agenda da Carol</a></div></footer>
 
 <script src="agenda/demo-db.js"></script>
 <script>
