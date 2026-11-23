@@ -151,6 +151,9 @@ body.tem-reserva .wrap{padding-bottom:360px}
 [hidden]{display:none!important}
 /* logo da Carol Paiva no topo e faixa de demonstração */
 .logoimg{height:58px;width:auto;display:block;margin:0}
+.vsite{display:block;margin-top:4px;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);text-decoration:none}
+.demo{display:flex;align-items:baseline;gap:8px;border-bottom:1px dashed #B9B0A6;padding:0 2px 8px;font-size:12px;color:var(--muted);margin-bottom:12px}
+.demo b{color:var(--ink);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:11px}
 body{margin:0}
 html{scrollbar-width:none}
 header.top{background:#FFFFFF;margin:-12px -16px 16px;padding:14px 16px;border-bottom:1px solid var(--line);border-radius:0 0 20px 20px}
@@ -221,8 +224,8 @@ body.sem-login nav.tabs,body.sem-login #reservaRoot{display:none}
 
 <div class="wrap">
   <header class="top">
-    <div class="logo"><img class="logoimg" src="logo.png" alt="Carol Paiva · Lash Designer"><b id="mono" hidden></b><div id="brand" hidden></div></div>
-    <div class="today"><span id="todayLbl"></span></div>
+    <div class="logo"><a href="../" title="Ver o site"><img class="logoimg" src="logo.png" alt="Carol Paiva · Lash Designer"></a><b id="mono" hidden></b><div id="brand" hidden></div></div>
+    <div class="today"><span id="todayLbl"></span><a class="vsite" href="../">Ver meu site ›</a></div>
   </header>
   <div id="banner"></div>
   <main id="view"><div class="empty"><b>Carregando a agenda…</b>Os agendamentos, clientes e o caixa aparecem aqui em instantes.</div></main>
@@ -467,7 +470,7 @@ function render(){
 }
 setInterval(() => { if (!$("#modalRoot").innerHTML) renderReserva(); }, 60000);
 function renderBanner(){
-  if (window.__DEMO) { $("#banner").innerHTML = ''; return; }
+  if (window.__DEMO) { $("#banner").innerHTML = '<div class="demo"><b>Demonstração</b><span>o que você marcar fica só neste aparelho</span></div>'; return; }
   $("#banner").innerHTML = S.canWrite ? "" : '<div class="banner">Você pode ver a agenda, mas não alterar. Peça pra quem criou o app te dar acesso de edição.</div>';
 }
 function profChips(){
@@ -499,7 +502,7 @@ function marcarPedido(id){
   const p = (S.pedidos||[]).find(x => x.id === id); if (!p) return;
   const sv = svcPorNome(p.tecnica); const c = clientePorTel(p.telefone);
   const obs = [p.tipo && p.tipo !== "primeira aplicação" ? p.tipo[0].toUpperCase()+p.tipo.slice(1) : "", p.periodo ? "prefere "+p.periodo : "", p.obs||""].filter(Boolean).join(" · ");
-  formAg(null, c ? c.id : "", {pedidoId: p.id, data: p.dia || S.dia, servicos: sv ? [{id: sv.id, nome: sv.nome, preco: sv.preco ?? null, duracao: sv.duracao ?? null}] : [], servicoId: sv ? sv.id : "", obs});
+  formAg(null, c ? c.id : "", {pedidoId: p.id, data: p.dia || S.dia, hora: p.hora || "", servicos: sv ? [{id: sv.id, nome: sv.nome, preco: sv.preco ?? null, duracao: sv.duracao ?? null}] : [], servicoId: sv ? sv.id : "", obs});
   if (!c){ const m = document.querySelector(".modal"); if (!m) return; const s = m.querySelector("#agCli"); s.value = "__nova"; s.dispatchEvent(new Event("change"));
     m.querySelector("#ncNome").value = p.nome || ""; m.querySelector("#ncTel").value = p.telefone || ""; m.querySelector("#ncTel").dispatchEvent(new Event("input")); }
 }

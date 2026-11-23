@@ -71,7 +71,7 @@ section{padding:56px 0}
 .horas button{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:9px 0;font:inherit;font-size:.82rem;cursor:pointer}
 .horas button.x{opacity:.35;text-decoration:line-through;cursor:default}
 .horas button.on{background:var(--nude2);border-color:var(--nude2);color:#fff;font-weight:600}
-.agenda input[type=text]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;font-size:16px}
+.agenda input[type=text],.agenda input[type=tel]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;font-size:16px}
 .total{display:flex;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-weight:600}
 .agenda .btn{width:100%;margin-top:16px;padding:16px}
 .ok{display:none;margin-top:14px;background:#F1EAE0;border-radius:16px;padding:14px;font-size:.84rem;text-align:center}
@@ -90,7 +90,7 @@ footer img{width:160px;margin:0 auto 10px}
 <div class="hero"><div class="bg"></div><div class="wrap">
   <div class="eyebrow">Cílios · Sobrancelhas · Laser</div>
   <h1>Seu momento de <i>cuidado</i> começa aqui</h1>
-  <p>Escolha o procedimento, o dia e o horário. O seu pedido chega pronto no meu WhatsApp.</p>
+  <p>Escolha o procedimento, o dia e o horário. O seu pedido chega direto na minha agenda.</p>
   <a class="btn" href="#agendar">Agendar meu horário</a>
 </div></div>
 
@@ -132,8 +132,10 @@ footer img{width:160px;margin:0 auto 10px}
     <div class="horas" id="horas"></div>
     <label class="t">Seu nome</label>
     <input type="text" id="nome" placeholder="Como você se chama?">
+    <label class="t">Seu WhatsApp</label>
+    <input type="tel" id="tel" inputmode="tel" placeholder="(37) 9 9999-9999">
     <div class="total"><span>Total</span><span id="tot">R$ 0</span></div>
-    <button class="btn" id="conf">Pedir horário pelo WhatsApp</button>
+    <button class="btn" id="conf">Pedir meu horário</button>
     <div class="ok" id="ok"></div>
   </div>
   <div class="faixa" style="margin-top:22px"><img src="img/olhar1.jpg" alt=""><img src="img/olhar2.jpg" alt=""></div>
@@ -145,26 +147,33 @@ footer img{width:160px;margin:0 auto 10px}
 </div></section>
 <footer><img src="img/logo-cp.png" alt=""><div>Carol Paiva · Lash Designer</div><div style="margin-top:14px"><a href="agenda/" style="color:inherit;opacity:.55;font-size:.72rem;text-decoration:none">Área da profissional</a></div></footer>
 
+<script src="agenda/demo-db.js"></script>
 <script>
-var S=[['Volume brasileiro',150],['Volume inglês',180],['Fox Eyes',190],['Manutenção',95],['Design de sobrancelhas',40],['Brow Lamination',120]];
+var S=[['Volume brasileiro',150],['Volume inglês',180],['Fox Eyes',190],['Manutenção de cílios',95],['Design de sobrancelhas',40],['Brow Lamination',120]];
 var chips=document.getElementById('chips');
-S.forEach(function(s,i){chips.insertAdjacentHTML('beforeend','<input type="checkbox" id="s'+i+'" value="'+i+'"><label for="s'+i+'">'+s[0]+'</label>')});
+S.forEach(function(s,i){chips.insertAdjacentHTML('beforeend','<input type="radio" name="sv" id="s'+i+'" value="'+i+'"><label for="s'+i+'">'+s[0]+'</label>')});
 function tot(){var t=0;chips.querySelectorAll('input:checked').forEach(function(c){t+=S[c.value][1]});document.getElementById('tot').textContent='R$ '+t}
 chips.addEventListener('change',tot);
 var DS=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],dias=document.getElementById('dias'),k=0,d=new Date(),sel=null,hsel=null;
-while(k<6){d.setDate(d.getDate()+1);if(d.getDay()===0)continue;var b=document.createElement('button');b.innerHTML=DS[d.getDay()]+'<b>'+d.getDate()+'</b>';b.dataset.i=k;b.onclick=function(){dias.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});this.classList.add('on');sel=this;horas()};dias.appendChild(b);k++}
+while(k<6){d.setDate(d.getDate()+1);if(d.getDay()===0)continue;var b=document.createElement('button');b.innerHTML=DS[d.getDay()]+'<b>'+d.getDate()+'</b>';b.dataset.i=k;b.dataset.off=Math.round((new Date(d.getFullYear(),d.getMonth(),d.getDate())-new Date(new Date().getFullYear(),new Date().getMonth(),new Date().getDate()))/864e5);b.onclick=function(){dias.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});this.classList.add('on');sel=this;horas()};dias.appendChild(b);k++}
 var H=['08:00','09:00','10:00','11:00','13:00','14:00','15:00','16:00','17:00'];
 function horas(){var h=document.getElementById('horas');h.innerHTML='';hsel=null;H.forEach(function(x){var b=document.createElement('button');b.textContent=x;b.onclick=function(){h.querySelectorAll('button').forEach(function(y){y.classList.remove('on')});this.classList.add('on');hsel=x};h.appendChild(b)})}
 dias.firstChild.click();
-document.getElementById('conf').onclick=function(){
-  var o=document.getElementById('ok'),sv=[];chips.querySelectorAll('input:checked').forEach(function(c){sv.push(S[c.value][0])});
-  var nome=document.getElementById('nome').value.trim(),falta=[];
-  if(!sv.length)falta.push('o procedimento');if(!hsel)falta.push('o horário');if(!nome)falta.push('o seu nome');
-  if(falta.length){o.style.display='block';o.textContent='Falta escolher '+falta.join(', ')+'.';return}
-  var dia=sel.textContent.replace(/(\D+)(\d+)/,'$1 $2');
-  var msg='Oi, Carol! Tudo bem? Vim pelo seu site.\n\nQuero agendar: '+sv.join(', ')+'.\nDia: '+dia+', às '+hsel+'.\n\nMeu nome é '+nome+'. Tem esse horário livre?';
-  o.style.display='block';o.innerHTML='Abrindo o WhatsApp com o seu pedido. A Carol confirma o horário por lá. 🤍';
-  location.href='https://wa.me/5537998361528?text='+encodeURIComponent(msg);
+var db=window.firebase?firebase.firestore():null;
+function ymd(dt){return dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0')}
+document.getElementById('conf').onclick=async function(){
+  var o=document.getElementById('ok'),c=chips.querySelector('input:checked'),sv=c?S[c.value][0]:'';
+  var nome=document.getElementById('nome').value.trim(),tel=document.getElementById('tel').value.trim(),falta=[];
+  if(!sv)falta.push('o procedimento');if(!hsel)falta.push('o horário');if(!nome)falta.push('o seu nome');if(tel.replace(/\D/g,'').length<10)falta.push('o seu WhatsApp com DDD');
+  if(falta.length){o.style.display='block';o.textContent='Falta '+falta.join(', ')+'.';return}
+  var dt=new Date();dt.setDate(dt.getDate()+(+sel.dataset.off));var dia=sel.textContent.replace(/(\D+)(\d+)/,'$1 $2');
+  var agora=new Date(Date.now()-new Date().getTimezoneOffset()*60000).toISOString().slice(0,16).replace('T',' ');
+  try{if(db)await db.collection('pedidos').doc().set({nome:nome,telefone:tel,tecnica:sv,tipo:'primeira aplicação',dia:ymd(dt),hora:hsel,periodo:'às '+hsel,obs:'',criadoEm:agora})}catch(e){console.error(e)}
+  var msg='Oi, Carol! Sou a '+nome+' e acabei de pedir um horário pelo seu site.\nQueria '+sv+', '+dia+', às '+hsel+'.';
+  o.style.display='block';
+  o.innerHTML='Obrigada, '+nome.split(' ')[0]+'! A Carol recebeu o seu pedido de '+sv+' pra '+dia+', às '+hsel+', e vai te chamar no WhatsApp pra confirmar. 🤍'+
+    '<br><a class="btn" style="margin-top:12px" href="https://wa.me/5537998361528?text='+encodeURIComponent(msg)+'">Adiantar pelo WhatsApp</a>'+
+    (window.__DEMO?'<p style="margin:12px 0 0;font-size:.78rem;opacity:.8">Demonstração: o pedido já está na agenda da Carol. <a href="agenda/" style="color:inherit;font-weight:600">Abrir a agenda e ver ›</a></p>':'');
 };
 </script>
 </body>
