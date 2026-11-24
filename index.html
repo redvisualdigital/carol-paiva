@@ -4,209 +4,259 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Carol Paiva · Lash Designer · Formiga</title>
-<meta name="description" content="Extensão de cílios, sobrancelhas e remoção a laser em Formiga/MG. Escolha o procedimento e agende pelo WhatsApp.">
+<meta name="description" content="Extensão de cílios, sobrancelhas e remoção a laser em Formiga/MG. Veja os horários livres e agende na hora.">
 <meta property="og:title" content="Carol Paiva · Lash Designer">
-<meta property="og:description" content="Cílios, sobrancelhas e laser em Formiga/MG. Agende o seu horário.">
+<meta property="og:description" content="Cílios, sobrancelhas e laser em Formiga/MG. Veja os horários livres e agende.">
 <meta property="og:image" content="https://redvisualdigital.github.io/carol-paiva/og.jpg">
 <meta property="og:url" content="https://redvisualdigital.github.io/carol-paiva/">
 <link rel="icon" href="img/icon-192.png">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@300;400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#FAF7F2;--card:#FFFFFF;--line:#E9E1D6;--ink:#221C1A;--mut:#8C8178;--nude:#C9B29C;--nude2:#8A715E}
+:root{--bg:#FAF7F2;--nude:#F1EAE0;--card:#FFFFFF;--line:#E9E1D6;--ink:#221C1A;--mut:#8C8178;--rose:#C9B29C;--rose2:#8A715E;--grad:linear-gradient(135deg,#D8C3AE 0%,#C9B29C 45%,#8A715E 100%)}
 *{box-sizing:border-box;margin:0;padding:0}
-::-webkit-scrollbar{display:none}
-body{background:var(--bg);color:var(--ink);font-family:Montserrat,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:Montserrat,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:500}
-.eyebrow{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--nude2)}
-.script{font-family:Allura,cursive;color:var(--nude2)}
-header{position:sticky;top:0;z-index:20;background:rgba(250,247,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
-header img{height:40px}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;font-weight:500;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;border:0;border-radius:999px;padding:14px 24px;font-size:.72rem;cursor:pointer;font-family:inherit}
-.btn.sm{padding:9px 16px;font-size:.62rem}
-.hero{position:relative;min-height:86vh;display:flex;align-items:flex-end;overflow:hidden}
-.hero .bg{position:absolute;inset:0;background:url(../carol-paiva/img/espaco.jpg) center 30%/cover}
-.hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(250,247,242,0) 0%,rgba(250,247,242,.6) 52%,var(--bg) 94%)}
-.hero .wrap{position:relative;padding-bottom:46px;padding-top:120px;text-align:center}
-.hero .logo{width:210px;margin:0 auto 14px}
-.hero h1{font-size:clamp(2.1rem,9vw,3.6rem);line-height:1.04;margin:10px 0 12px}
-.hero h1 i{color:var(--nude2)}
-.hero p{color:var(--mut);max-width:34ch;margin:0 auto 22px;font-size:.92rem}
-.linha{width:46px;height:1px;background:var(--nude);margin:14px auto}
-section{padding:56px 0}
+.eyebrow{font-size:.64rem;letter-spacing:.34em;text-transform:uppercase;color:var(--rose2)}
+.script{font-family:Allura,cursive;color:var(--rose2)}
+.ouro{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* marca */
+.marca{display:flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--ink);line-height:1}
+.marca .lc{font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:500;letter-spacing:.02em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.marca .nm{font-family:"Cormorant Garamond",serif;font-size:1.02rem;letter-spacing:.26em;margin-top:2px}
+.marca .sub{font-size:.5rem;letter-spacing:.32em;text-transform:uppercase;color:var(--mut);margin-top:4px}
+header{position:sticky;top:0;z-index:20;background:rgba(251,247,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:66px}
+header .marca{flex-direction:row;gap:10px;align-items:center}
+header .marca .lc{font-size:1.9rem}
+header .marca .nm{font-size:.92rem;margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#fff;font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;border:0;border-radius:999px;padding:15px 26px;font-size:.7rem;cursor:pointer;font-family:inherit;transition:transform .15s}
+.btn:active{transform:scale(.98)}
+.btn.ouro-bg{background:var(--grad);color:#fff}
+.btn.sm{padding:9px 16px;font-size:.6rem}
+.btn.lin{background:none;color:var(--ink);border:1px solid var(--ink)}
+/* hero */
+.hero{position:relative;min-height:92vh;display:flex;align-items:flex-end;overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url(img/espaco.jpg) center 30%/cover}
+.hero .bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(251,247,242,0) 0%,rgba(251,247,242,0) 46%,rgba(251,247,242,.88) 70%,var(--bg) 90%)}
+.hero .wrap{position:relative;padding-bottom:48px;padding-top:140px;text-align:center}
+.hero .marca{margin-bottom:18px}
+.hero .marca .lc{font-size:3.4rem}
+.hero .marca .nm{font-size:1.3rem}
+.hero h1{font-size:clamp(2.2rem,9.4vw,3.8rem);line-height:1.02;margin:12px 0 12px}
+.hero h1 i{font-style:italic}
+.hero p{color:var(--mut);max-width:34ch;margin:0 auto 24px;font-size:.92rem}
+.linha{width:46px;height:1px;background:var(--grad);margin:14px auto}
+section{padding:58px 0}
 .tit{text-align:center;margin-bottom:26px}
-.tit h2{font-size:clamp(1.7rem,7vw,2.4rem);line-height:1.1;margin-top:8px}
-.tit h2 i{color:var(--nude2)}
-.sobre{display:grid;gap:18px;align-items:center}
-.sobre img{border-radius:22px;aspect-ratio:4/5;object-fit:cover;width:100%}
+.tit h2{font-size:clamp(1.8rem,7.4vw,2.5rem);line-height:1.08;margin-top:8px}
+.tit h2 i{font-style:italic}
+/* sobre */
+.sobre{display:grid;gap:20px;align-items:center}
+.sobre .foto{position:relative}
+.sobre .foto img{width:100%;max-width:420px;margin:0 auto;filter:drop-shadow(0 18px 40px rgba(138,113,94,.18))}
+.sobre .foto img.arco{border-radius:200px 200px 24px 24px;aspect-ratio:4/5;object-fit:cover;object-position:center 25%}
 .sobre .t{text-align:center}
-.sobre .t .script{font-size:2.6rem;line-height:1}
-.sobre p{color:var(--mut);font-size:.9rem;margin-top:10px}
-.svcs{display:grid;gap:16px}
-.svc{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden}
-.svc img{aspect-ratio:16/11;object-fit:cover;width:100%}
-.svc .in{padding:18px 18px 8px}
-.svc h3{font-size:1.55rem;line-height:1.1}
+.sobre .t .script{font-size:2.9rem;line-height:1}
+.sobre p{color:var(--mut);font-size:.92rem;margin-top:10px}
+.selos{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}
+.selos span{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--rose2);background:var(--card)}
+/* serviços */
+.svcs{display:grid;gap:18px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.svc .img{position:relative}
+.svc img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.svc .tag{position:absolute;left:14px;top:14px;background:rgba(251,247,242,.92);border-radius:999px;padding:6px 12px;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose2)}
+.svc .in{padding:18px 18px 20px}
+.svc .lin2{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px}
+.svc .p{font-family:"Cormorant Garamond",serif;font-size:1.7rem;font-weight:600;color:var(--rose2);line-height:1}
+.svc .p small{display:block;font-family:Montserrat,sans-serif;font-size:.66rem;font-weight:400;color:var(--mut);letter-spacing:.06em;margin-top:4px}
+.svc .aviso{margin-top:12px;background:var(--nude);border-radius:12px;padding:9px 12px;font-size:.74rem;color:var(--rose2)}
+.svc h3{font-size:1.65rem;line-height:1.1}
 .svc .d{font-size:.8rem;color:var(--mut);margin-top:4px}
-.it{display:flex;justify-content:space-between;gap:12px;padding:12px 18px;border-top:1px dashed var(--line);font-size:.86rem}
+.it{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 18px;border-top:1px dashed var(--line);font-size:.86rem}
 .it b{font-weight:600}
 .it small{display:block;color:var(--mut);font-size:.72rem}
-.it .p{font-weight:600;color:var(--nude2);white-space:nowrap}
-.ex{display:block;text-align:center;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nude2);background:#F1EAE0;border-radius:999px;padding:7px 12px;margin:0 auto 18px;width:max-content;max-width:100%;text-align:center}
-.agenda{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:20px}
-.agenda label.t{display:block;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin:16px 0 8px}
+.it .p{font-family:"Cormorant Garamond",serif;font-size:1.3rem;font-weight:600;color:var(--rose2);white-space:nowrap}
+/* agenda */
+.agenda{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 20px 50px rgba(148,102,77,.08)}
+.agenda label.t{display:block;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--mut);margin:18px 0 9px}
 .agenda label.t:first-child{margin-top:0}
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chips input{display:none}
-.chips label{border:1px solid var(--line);border-radius:999px;padding:8px 13px;font-size:.8rem;cursor:pointer;background:var(--bg)}
+.chips label{border:1px solid var(--line);border-radius:999px;padding:9px 14px;font-size:.8rem;cursor:pointer;background:var(--bg)}
 .chips input:checked+label{background:var(--ink);border-color:var(--ink);color:#fff}
-.dias{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}
-.dias button{border:1px solid var(--line);background:var(--bg);border-radius:14px;padding:8px 0;font:inherit;font-size:.7rem;color:var(--mut);cursor:pointer}
-.dias button b{display:block;font-size:1.05rem;color:var(--ink);font-weight:600}
-.dias button.on{background:var(--ink);border-color:var(--ink);color:#d9cfc4}
+.chips .grp{flex-basis:100%;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--rose2);margin-top:6px}
+.dias{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;align-items:stretch}
+.dias button{border:1px solid var(--line);background:var(--bg);border-radius:14px;padding:8px 0;font:inherit;font-size:.68rem;color:var(--mut);cursor:pointer}
+.dias button b{display:block;font-size:1.1rem;color:var(--ink);font-weight:600}
+.dias button.on{background:var(--ink);border-color:var(--ink);color:#d9cbbd}
 .dias button.on b{color:#fff}
 .horas{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.horas button{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:9px 0;font:inherit;font-size:.82rem;cursor:pointer}
-.horas button.x{opacity:.35;text-decoration:line-through;cursor:default}
-.horas button.on{background:var(--nude2);border-color:var(--nude2);color:#fff;font-weight:600}
-.agenda input[type=text],.agenda input[type=tel]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;font-size:16px}
-.total{display:flex;justify-content:space-between;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-weight:600}
-.agenda .btn{width:100%;margin-top:16px;padding:16px}
-.ok{display:none;margin-top:14px;background:#F1EAE0;border-radius:16px;padding:14px;font-size:.84rem;text-align:center}
+.horas button{border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:10px 0;font:inherit;font-size:.82rem;cursor:pointer}
+.horas button.on{background:var(--grad);border-color:transparent;color:#fff;font-weight:600}
+.avx{display:none;margin-top:14px;background:var(--nude);border-radius:12px;padding:10px 12px;font-size:.78rem;color:var(--rose2);text-align:center}
+.dias button .mais{display:block;font-style:normal;font-size:.56rem;color:var(--rose2);margin-top:1px}
+.dias button.on .mais{color:#e7d3c3}
+.vazio{grid-column:1/-1;margin:0;font-size:.82rem;color:var(--mut);text-align:center;padding:8px 0}
+.agenda input[type=text],.agenda input[type=tel]{width:100%;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:13px;font:inherit;font-size:16px;color:var(--ink)}
+.total{display:flex;justify-content:space-between;align-items:baseline;margin-top:18px;padding-top:14px;border-top:1px solid var(--line);font-weight:600}
+.total span:last-child{font-family:"Cormorant Garamond",serif;font-size:1.5rem;color:var(--rose2)}
+.agenda .btn{width:100%;margin-top:16px;padding:17px}
+.ok{display:none;margin-top:14px;background:var(--nude);border-radius:16px;padding:16px;font-size:.86rem;text-align:center;line-height:1.6}
+/* galeria e info */
 .faixa{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.faixa img{border-radius:16px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.faixa img{border-radius:18px;aspect-ratio:3/4;object-fit:cover;width:100%}
+.faixa img:nth-child(2){margin-top:28px}
+.faixa img:nth-child(4){margin-top:28px}
 .info{display:grid;gap:10px;margin-top:22px}
-.info div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:.86rem}
-.info b{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--nude2);margin-bottom:2px;font-weight:600}
-footer{text-align:center;padding:30px 0 90px;color:var(--mut);font-size:.74rem}
-footer img{width:160px;margin:0 auto 10px}
-.horas .vazio{grid-column:1/-1;margin:0;font-size:.82rem;color:var(--mut);text-align:center;padding:8px 0}
+.info a,.info div{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;font-size:.88rem;color:var(--ink);text-decoration:none}
+.info b{display:block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rose2);margin-bottom:2px;font-weight:600}
+footer{text-align:center;padding:36px 0 96px;color:var(--mut);font-size:.72rem}
+footer .marca{margin-bottom:12px}
+.flut{position:fixed;right:16px;bottom:16px;z-index:30;box-shadow:0 10px 30px rgba(51,38,31,.25);transition:opacity .25s,transform .25s}
+.flut.esc{opacity:0;transform:translateY(20px);pointer-events:none}
+@media(min-width:620px){.svcs{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:900px){
+  .hero{min-height:84vh;align-items:center}
+  .hero .bg{left:48%;background-position:center 30%}
+  .hero .bg:after{background:linear-gradient(90deg,var(--bg) 0%,rgba(251,247,242,.55) 14%,rgba(251,247,242,0) 40%)}
+  .hero .wrap{text-align:left;padding:60px 20px;width:100%}
+  .hero .wrap > *{max-width:46%}
+  .hero p{margin-left:0}
+}
+@media(min-width:760px){
+  .sobre{grid-template-columns:1fr 1.1fr;gap:48px}
+  .sobre .t{text-align:left}.sobre .linha{margin-left:0}.selos{justify-content:flex-start}
+  .svcs{grid-template-columns:repeat(3,1fr)}
+  .faixa{grid-template-columns:repeat(4,1fr)}
+  .info{grid-template-columns:repeat(4,1fr)}
+  .agenda{max-width:620px;margin:0 auto}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap"><img src="../carol-paiva/img/logo-cp.png" alt="Carol Paiva Lash Designer"><a class="btn sm" href="#agendar">Agendar</a></div></header>
+<header><div class="wrap"><a class="marca" href="#"><img src="img/logo-cp.png" alt="Carol Paiva · Lash Designer" style="height:42px"></a><a class="btn sm" href="#agendar">Agendar</a></div></header>
 
 <div class="hero"><div class="bg"></div><div class="wrap">
   <div class="eyebrow">Cílios · Sobrancelhas · Laser</div>
-  <h1>Seu momento de <i>cuidado</i> começa aqui</h1>
-  <p>Escolha o procedimento, o dia e o horário. Você vê os horários livres e já agenda na hora.</p>
+  <h1>Seu momento de <i class="ouro">cuidado</i> começa aqui</h1>
+  <p>Escolha o procedimento, veja os horários livres e agende na hora. A confirmação chega no seu WhatsApp.</p>
   <a class="btn" href="#agendar">Agendar meu horário</a>
 </div></div>
 
 <section id="sobre" style="padding-top:30px"><div class="wrap">
   <div class="sobre">
-    <img src="../carol-paiva/img/carol.jpg" alt="Carol Paiva">
+    <div class="foto"><img src="img/carol.jpg" alt="Carol Paiva" class="arco"></div>
     <div class="t"><div class="script">Prazer, Carol Paiva.</div><div class="linha"></div>
-      <p>Lash designer em Formiga. Cada atendimento começa ouvindo você: o formato do olhar, a sua rotina e o efeito que combina com o seu rosto.</p></div>
+      <p>Lash designer em Formiga. Cada atendimento começa ouvindo você: o formato do olhar, a sua rotina e o efeito que combina com o seu rosto.</p>
+      <div class="selos"><span>Extensão de cílios</span><span>Fox Eyes</span><span>Sobrancelhas</span><span>Remoção a laser</span></div></div>
   </div>
 </div></section>
 
 <section id="servicos" style="padding-top:10px"><div class="wrap">
-  <div class="tit"><div class="eyebrow">Procedimentos</div><h2>Escolha o seu <i>cuidado</i></h2></div>
-  <span class="ex">Preços de exemplo · você define os seus</span>
-  <div class="svcs">
-    <div class="svc"><img src="../carol-paiva/img/cilios.jpg" alt="Extensão de cílios"><div class="in"><h3>Extensão de cílios</h3><div class="d">Volume brasileiro, volume inglês e efeito marrom.</div></div>
-      <div class="it"><div><b>Volume brasileiro</b><small>2h · manutenção a cada 15 a 20 dias</small></div><span class="p">R$ 150</span></div>
-      <div class="it"><div><b>Volume inglês</b><small>2h30</small></div><span class="p">R$ 180</span></div>
-      <div class="it"><div><b>Manutenção de cílios</b><small>1h30</small></div><span class="p">R$ 95</span></div></div>
-    <div class="svc"><img src="../carol-paiva/img/fox.jpg" alt="Efeito Fox Eyes" style="object-position:center 35%"><div class="in"><h3>Efeito Fox Eyes</h3><div class="d">Olhar alongado, marcante e sofisticado.</div></div>
-      <div class="it"><div><b>Fox Eyes</b><small>2h30</small></div><span class="p">R$ 190</span></div></div>
-    <div class="svc"><img src="../carol-paiva/img/sobrancelha.jpg" alt="Design de sobrancelhas"><div class="in"><h3>Sobrancelhas</h3><div class="d">Design que respeita o formato do seu rosto.</div></div>
-      <div class="it"><div><b>Design de sobrancelhas</b><small>40 min</small></div><span class="p">R$ 40</span></div>
-      <div class="it"><div><b>Brow Lamination</b><small>1h</small></div><span class="p">R$ 120</span></div></div>
-    <div class="svc"><img src="../carol-paiva/img/laser.jpg" alt="Remoção a laser"><div class="in"><h3>Remoção a laser</h3><div class="d">Tatuagem e pigmentação de sobrancelhas, com avaliação antes.</div></div>
-      <div class="it"><div><b>Avaliação</b><small>30 min</small></div><span class="p">R$ 0</span></div>
-      <div class="it"><div><b>Sessão de remoção</b><small>a partir de</small></div><span class="p">R$ 150</span></div></div>
-  </div>
+  <div class="tit"><div class="eyebrow">Procedimentos</div><h2>Escolha o seu <i class="ouro">cuidado</i></h2></div>
+  <div class="svcs" id="svcs"></div>
 </div></section>
 
 <section id="agendar" style="padding-top:10px"><div class="wrap">
-  <div class="tit"><div class="eyebrow">Agenda online</div><h2>Escolha o seu <i>horário</i></h2></div>
+  <div class="tit"><div class="eyebrow">Agendamento</div><h2>Escolha o seu <i class="ouro">horário</i></h2></div>
   <div class="agenda">
     <label class="t">Procedimento</label>
-    <div class="chips" id="chips"></div>
+    <div class="chips" id="chips"><span class="vazio">Carregando…</span></div>
     <label class="t">Dia</label>
     <div class="dias" id="dias"></div>
     <label class="t">Horários livres</label>
-    <div class="horas" id="horas"></div>
-    <label class="t">Seu nome</label>
-    <input type="text" id="nome" placeholder="Como você se chama?">
-    <label class="t">Seu WhatsApp</label>
-    <input type="tel" id="tel" inputmode="tel" placeholder="(37) 9 9999-9999">
-    <div class="total"><span>Total</span><span id="tot">R$ 0</span></div>
-    <button class="btn" id="conf">Agendar meu horário</button>
+    <div class="horas" id="horas"><p class="vazio">Escolha o procedimento pra ver os horários livres.</p></div>
+    <label class="t" for="nome">Seu nome</label>
+    <input type="text" id="nome" placeholder="Como você se chama?" autocomplete="name">
+    <label class="t" for="tel">Seu WhatsApp (com DDD)</label>
+    <input type="tel" id="tel" placeholder="(37) 9 9999-9999" autocomplete="tel">
+    <div class="avx" id="avx"></div>
+    <div class="total"><span>Valor</span><span id="tot">R$ 0</span></div>
+    <button class="btn ouro-bg" id="conf" type="button">Agendar meu horário</button>
     <div class="ok" id="ok"></div>
   </div>
-  <div class="faixa" style="margin-top:22px"><img src="../carol-paiva/img/olhar1.jpg" alt=""><img src="../carol-paiva/img/olhar2.jpg" alt=""></div>
+</div></section>
+
+<section style="padding-top:10px"><div class="wrap">
+  <div class="tit"><div class="eyebrow">Resultados</div><h2>Olhares <i class="ouro">que encantam</i></h2></div>
+  <div class="faixa"><img src="img/olhar1.jpg" alt="Extensão de cílios"><img src="img/olhar2.jpg" alt="Extensão de cílios"><img src="img/fox.jpg" alt="Fox Eyes"><img src="img/sobrancelha.jpg" alt="Sobrancelhas"></div>
   <div class="info">
+    <a href="https://wa.me/5537998361528" target="_blank"><b>WhatsApp</b>(37) 99836-1528</a>
+    <a href="https://instagram.com/carolinea_cilios" target="_blank"><b>Instagram</b>@carolinea_cilios</a>
+    <div><b>Atendimento</b><span id="horTxt">Segunda a sábado</span></div>
     <div><b>Onde</b>Formiga/MG</div>
-    <div><b>Instagram</b><a href="https://instagram.com/carolinea_cilios" style="color:inherit">@carolinea_cilios</a></div>
-    <div><b>WhatsApp</b><a href="https://wa.me/5537998361528" style="color:inherit">(37) 99836-1528</a></div>
   </div>
 </div></section>
-<footer><img src="../carol-paiva/img/logo-cp.png" alt=""><div>Carol Paiva · Lash Designer</div></footer>
 
+<footer><div class="marca"><img src="img/logo-cp.png" alt="Carol Paiva · Lash Designer" style="width:160px;margin:0 auto 6px"><span class="sub">Lash Designer · Formiga/MG</span></div></footer>
+<a class="btn flut esc" id="flut" href="#agendar">Agendar</a>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 <script>
-var REG={hero:'.hero .wrap',sobre:'.sobre',svcs:'.svcs',faixa:'.faixa',info:'.info'};
-(function(){try{var o=JSON.parse(localStorage.getItem('carolpaiva.site.v1')||'null');if(!o)return;for(var k in REG){if(o[k]!=null){var el=document.querySelector(REG[k]);if(el)el.innerHTML=o[k]}}if(o.bg)document.querySelector('.hero .bg').style.backgroundImage='url('+o.bg+')'}catch(e){}})();
-</script>
-<script src="../carol-paiva-agenda/demo-db.js"></script>
-<script>
-/* agendamento ligado à agenda da Carol: mostra só horário livre e já marca na agenda, com aviso pra ela */
-var DUR_PAD=60, EXP={ini:'08:00',fim:'18:00',passo:30,dias:[1,2,3,4,5,6]};
+/* Catálogo e agendamento ligados à agenda: preços e serviços vêm da agenda; mostra só horário livre; o pedido vira agendamento e a confirmação chega no WhatsApp */
+firebase.initializeApp({"apiKey":"AIzaSyAVwRySBJaqPDVbfAmdjCRgmUenRzPm260","authDomain":"carol-paiva-agenda.firebaseapp.com","projectId":"carol-paiva-agenda","storageBucket":"carol-paiva-agenda.firebasestorage.app","messagingSenderId":"399059346626","appId":"1:399059346626:web:97982ac5b0ada51fee875b"});
+var db=firebase.firestore(),CAT={servicos:[],profissionais:[],expediente:{ini:'08:00',fim:'18:00',passo:30,dias:[1,2,3,4,5,6]}},OC={},sv=null,dsel=null,hsel=null,meus=[];
+var $=function(i){return document.getElementById(i)};
 function toMin(h){var p=String(h||'0:0').split(':');return (+p[0])*60+(+p[1]||0)}
 function toH(m){return String(Math.floor(m/60)).padStart(2,'0')+':'+String(m%60).padStart(2,'0')}
-function durTxt(t){t=String(t||'');var h=t.match(/(\d+)\s*h\s*(\d+)?/),mi=t.match(/(\d+)\s*min/);if(h)return (+h[1])*60+(+h[2]||0);if(mi)return +mi[1];return 0}
-var S=[];document.querySelectorAll('.svcs .it').forEach(function(it){var b=it.querySelector('b'),pr=it.querySelector('.p'),sm=it.querySelector('small');if(!b)return;var n=b.textContent.trim(),v=parseFloat(((pr&&pr.textContent)||'').replace(/[^\d,]/g,'').replace(',','.'))||0;if(n)S.push({nome:n,preco:v,dur:durTxt(sm&&sm.textContent)})});
-var chips=document.getElementById('chips'),db=window.firebase?firebase.firestore():null,CFG={},AGS=[];
-S.forEach(function(s,i){chips.insertAdjacentHTML('beforeend','<input type="radio" name="sv" id="s'+i+'" value="'+i+'"><label for="s'+i+'">'+s.nome+'</label>')});
-function svAtual(){var c=chips.querySelector('input:checked');return c?S[c.value]:null}
-function svAgenda(nome){return (CFG.servicos||[]).find(function(x){return String(x.nome).toLowerCase()===String(nome).toLowerCase()})}
-function durDe(s){if(!s)return DUR_PAD;var a=svAgenda(s.nome);return (a&&a.duracao)||s.dur||DUR_PAD}
-function tot(){var s=svAtual();document.getElementById('tot').textContent='R$ '+(s?s.preco:0)}
-async function carrega(){if(!db)return;try{var g=await db.doc('config/geral').get();CFG=g.exists?g.data():{};var q=await db.collection('agendamentos').get();AGS=q.docs.map(function(d){return d.data()})}catch(e){console.error(e)}
-  var ex=CFG.expediente||{};EXP={ini:ex.ini||EXP.ini,fim:ex.fim||EXP.fim,passo:ex.passo||EXP.passo,dias:ex.dias||EXP.dias}}
-function ocupado(data,ini,fim){
-  var a=AGS.some(function(x){if(x.data!==data||x.status==='cancelado'||x.status==='faltou')return false;var i=toMin(x.hora),f=i+(Number(x.duracao)||DUR_PAD);return ini<f&&fim>i});
-  var b=(CFG.bloqueios||[]).some(function(x){if(x.data!==data)return false;var i=x.diaTodo?0:toMin(x.de),f=x.diaTodo?1440:toMin(x.ate);return ini<f&&fim>i});
-  return a||b}
-function ymd(dt){return dt.getFullYear()+'-'+String(dt.getMonth()+1).padStart(2,'0')+'-'+String(dt.getDate()).padStart(2,'0')}
-var DS=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],dias=document.getElementById('dias'),sel=null,hsel=null;
-function montaDias(){dias.innerHTML='';var d=new Date(),k=0,n=0;while(k<6&&n<30){d.setDate(d.getDate()+1);n++;if(EXP.dias.indexOf(d.getDay())<0)continue;var b=document.createElement('button');b.innerHTML=DS[d.getDay()]+'<b>'+d.getDate()+'</b>';b.dataset.data=ymd(d);b.onclick=function(){dias.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});this.classList.add('on');sel=this;horas()};dias.appendChild(b);k++}}
-function livres(data){var dur=durDe(svAtual()),out=[];for(var t=toMin(EXP.ini);t+dur<=toMin(EXP.fim);t+=EXP.passo){if(!ocupado(data,t,t+dur))out.push(toH(t))}return out}
-function horas(){var h=document.getElementById('horas');h.innerHTML='';hsel=null;if(!sel)return;
-  if(!svAtual()){h.innerHTML='<p class="vazio">Escolha o procedimento pra ver os horários livres.</p>';return}
-  var L=livres(sel.dataset.data);if(!L.length){h.innerHTML='<p class="vazio">Esse dia está cheio. Escolha outro dia.</p>';return}
-  L.forEach(function(x){var b=document.createElement('button');b.textContent=x;b.onclick=function(){h.querySelectorAll('button').forEach(function(y){y.classList.remove('on')});this.classList.add('on');hsel=x};h.appendChild(b)})}
-chips.addEventListener('change',function(){tot();horas()});
-var dig=function(t){return String(t||'').replace(/\D/g,'').slice(-8)};
-document.getElementById('conf').onclick=async function(){
-  var o=document.getElementById('ok'),s=svAtual(),btn=this;
-  var nome=document.getElementById('nome').value.trim(),tel=document.getElementById('tel').value.trim(),falta=[];
-  if(!s)falta.push('o procedimento');if(!hsel)falta.push('o horário');if(!nome)falta.push('o seu nome');if(tel.replace(/\D/g,'').length<10)falta.push('o seu WhatsApp com DDD');
-  if(falta.length){o.style.display='block';o.textContent='Falta '+falta.join(', ')+'.';return}
-  btn.disabled=true;
-  await carrega();var data=sel.dataset.data,dur=durDe(s),ini=toMin(hsel);
-  if(ocupado(data,ini,ini+dur)){btn.disabled=false;o.style.display='block';o.textContent='Esse horário acabou de ser ocupado. Escolha outro, por favor.';horas();return}
-  var dia=sel.textContent.replace(/(\D+)(\d+)/,'$1 $2'),agora=new Date().toISOString();
-  try{if(db){
-    var cq=await db.collection('clientes').get(),cli=cq.docs.find(function(d){return dig(d.data().telefone)===dig(tel)}),cid;
-    if(cli)cid=cli.id;else{var r=db.collection('clientes').doc();cid=r.id;await r.set({nome:nome,telefone:tel,obs:'',criadoEm:agora.slice(0,10)})}
-    var a=svAgenda(s.nome),sid=a?a.id:'',preco=a&&a.preco!=null?a.preco:s.preco;
-    var ag=db.collection('agendamentos').doc();
-    await ag.set({clienteId:cid,profId:(CFG.profissionais&&CFG.profissionais[0]&&CFG.profissionais[0].id)||'carol',divisao:[],servicos:[{id:sid,nome:s.nome,preco:preco,duracao:dur}],servicoId:sid,servicoNome:s.nome,domicilio:null,data:data,hora:hsel,valor:preco,duracao:dur,obs:'Agendado pelo site',status:'agendado',origem:'site',criadoEm:agora});
-    await db.collection('avisos').doc().set({tipo:'agendou',nome:nome,telefone:tel,servico:s.nome,data:data,hora:hsel,agId:ag.id,criadoEm:agora});
-  }}catch(e){console.error(e);btn.disabled=false;o.style.display='block';o.textContent='Não deu pra marcar agora. Tente de novo ou chame a Carol no WhatsApp.';return}
-  btn.disabled=false;
-  var msg='Oi, Carol! Sou a '+nome+' e acabei de agendar pelo seu site: '+s.nome+', '+dia+', às '+hsel+'.';
-  o.style.display='block';
-  o.innerHTML='Prontinho, '+nome.split(' ')[0]+'! O seu horário de '+s.nome+' está marcado pra '+dia+', às '+hsel+'. A Carol já recebeu e vai te mandar a confirmação no WhatsApp. 🤍'+
-    '<br><a class="btn" style="margin-top:12px" href="https://wa.me/5537998361528?text='+encodeURIComponent(msg)+'">Falar com a Carol no WhatsApp</a>';
-  await carrega();horas();
+function ymd(d){return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function dur(m){m=Number(m)||0;var h=Math.floor(m/60),r=m%60;return h?(h+'h'+(r?String(r).padStart(2,'0'):'')):(r+' min')}
+function preco(v){return v==null?'Consultar':(Number(v)===0?'Grátis':'R$ '+v)}
+var CARD={
+  's-vbr':{img:'img/cilios.jpg',tag:'Extensão de cílios',d:'Volume natural e leve, com manutenção a cada 15 a 20 dias.'},
+  's-vin':{img:'img/olhar1.jpg',tag:'Extensão de cílios',d:'Mais volume e um olhar marcante.'},
+  's-fox':{img:'img/fox.jpg',tag:'Efeito especial',d:'Olhar alongado, marcante e sofisticado.'},
+  's-manut':{img:'img/olhar2.jpg',tag:'Manutenção',d:'Pra manter seus cílios sempre lindos e cheios.'},
+  's-design':{img:'img/sobrancelha.jpg',tag:'Sobrancelhas',d:'Design que respeita o formato do seu rosto.'},
+  's-browlam':{img:'img/sobrancelha.jpg',tag:'Sobrancelhas',d:'Fios alinhados, preenchidos e com efeito natural.'},
+  's-laser-av':{img:'img/laser.jpg',tag:'Remoção a laser',d:'Avaliação antes da remoção de tatuagem e pigmentação de sobrancelhas.'},
+  's-laser':{img:'img/laser.jpg',tag:'Remoção a laser',d:'Sessão de remoção de tatuagem e pigmentação de sobrancelhas.'}
 };
-(async function(){await carrega();montaDias();if(dias.firstChild)dias.firstChild.click()})();
+var ORDEM=['s-vbr','s-vin','s-fox','s-manut','s-design','s-browlam','s-laser-av','s-laser'];
+async function carrega(){var c=await db.doc('publico/catalogo').get();if(c.exists)CAT=c.data();var a=await db.doc('publico/agenda').get();OC=a.exists?(a.data().ocupados||{}):{}}
+function janelas(data){var ex=CAT.expediente||{},dw=new Date(data+'T12:00:00').getDay();if(ex.janelas&&ex.janelas[dw])return ex.janelas[dw];if(ex.janelas)return [];return (ex.dias||[]).indexOf(dw)>=0?[[ex.ini,ex.fim]]:[]}
+function extra(data){var ex=CAT.expediente||{},a=ex.acrescimo;if(!a||!a.valor)return 0;var dw=new Date(data+'T12:00:00').getDay();return ((a.domingo&&dw===0)||(a.feriado&&(ex.feriados||[]).indexOf(data)>=0))?Number(a.valor):0}
+function ehFeriado(data){return ((CAT.expediente||{}).feriados||[]).indexOf(data)>=0}
+function total(){var t=$('tot'),av=$('avx');if(!sv){t.textContent='R$ 0';av.style.display='none';return}var x=dsel?extra(dsel.dataset.data):0;t.textContent=sv.preco==null?'Consultar':'R$ '+(Number(sv.preco)+x);if(x){av.style.display='block';av.textContent=(ehFeriado(dsel.dataset.data)?'Feriado':'Domingo')+': o atendimento tem acréscimo de R$ '+x+'.'}else av.style.display='none'}
+function profsDe(s){return (s.profs&&s.profs.length)?s.profs:[s.profId]}
+function ocupado(data,profs,ini,fim){var l=(OC[data]||[]).concat(meus.filter(function(x){return x.split('|')[3]===data}));return l.some(function(x){var p=x.split('|');return (!p[0]||profs.indexOf(p[0])>=0)&&ini<+p[2]&&fim>+p[1]})}
+function nomeCurto(n){return n.replace(/^Combo (\S+) \((.*)\)$/,'Combo $1').replace(/ \(.*\)$/,'')}
+function cartoes(){var el=$('svcs');el.innerHTML='';var ls=CAT.servicos.slice().sort(function(a,b){var ia=a.combo?99:ORDEM.indexOf(a.id),ib=b.combo?99:ORDEM.indexOf(b.id);return (ia<0?50:ia)-(ib<0?50:ib)});
+  ls.forEach(function(s){var c=CARD[s.id]||{d:''};var det=s.combo?(s.nome.match(/\((.*)\)/)||[])[1]:'';
+    el.insertAdjacentHTML('beforeend','<div class="svc">'+(c.img?'<div class="img"><img src="'+c.img+'" alt="'+esc(s.nome)+'"><span class="tag">'+esc(c.tag)+'</span></div>':'')+'<div class="in"><h3>'+esc(nomeCurto(s.nome))+'</h3><div class="d">'+esc(det?det+'. '+c.d:c.d)+'</div>'+(c.aviso?'<div class="aviso">'+c.aviso+'</div>':'')+
+      '<div class="lin2"><div class="p">'+preco(s.preco)+'<small>'+dur(s.duracao)+'</small></div><button class="btn sm" type="button" data-ag="'+esc(s.id)+'">Agendar</button></div></div></div>')});
+  el.querySelectorAll('[data-ag]').forEach(function(b){b.onclick=function(){escolhe(b.dataset.ag)}})}
+function escolhe(id){var i=-1;CAT.servicos.forEach(function(s,k){if(s.id===id)i=k});var r=$('s'+i);if(r){r.checked=true;$('chips').onchange()}$('agendar').scrollIntoView({behavior:'smooth'})}
+function chips(){var el=$('chips');el.innerHTML='';if(!CAT.servicos.length){el.innerHTML='<span class="vazio">Não deu pra carregar agora. Atualize a página.</span>';return}
+  var add=function(t,ls){if(!ls.length)return;if(t)el.insertAdjacentHTML('beforeend','<span class="grp">'+t+'</span>');ls.forEach(function(s){var i=CAT.servicos.indexOf(s);el.insertAdjacentHTML('beforeend','<input type="radio" name="sv" id="s'+i+'" value="'+i+'"><label for="s'+i+'">'+esc(nomeCurto(s.nome))+'</label>')})};
+  add('',CAT.servicos.filter(function(s){return !s.combo}));add('Combos',CAT.servicos.filter(function(s){return s.combo}));
+  el.onchange=function(){var c=el.querySelector('input:checked');sv=c?CAT.servicos[c.value]:null;total();horas()}}
+function dias(){var el=$('dias');el.innerHTML='';var DS=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],d=new Date(),k=0,n=0;while(k<10&&n<40){d.setDate(d.getDate()+1);n++;if(!janelas(ymd(d)).length)continue;var b=document.createElement('button');b.type='button';b.innerHTML=DS[d.getDay()]+'<b>'+d.getDate()+'</b>'+(extra(ymd(d))?'<i class="mais">+R$ '+extra(ymd(d))+'</i>':'');b.dataset.data=ymd(d);b.onclick=function(){el.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});this.classList.add('on');dsel=this;total();horas()};el.appendChild(b);k++}if(el.firstChild)el.firstChild.click()}
+function horas(){var el=$('horas');el.innerHTML='';hsel=null;if(!sv){el.innerHTML='<p class="vazio">Escolha o procedimento pra ver os horários livres.</p>';return}if(!dsel)return;var ps=(CAT.expediente||{}).passo||30,du=Number(sv.duracao)||60,L=[];janelas(dsel.dataset.data).forEach(function(j){for(var t=toMin(j[0]);t+du<=toMin(j[1]);t+=ps){if(!ocupado(dsel.dataset.data,profsDe(sv),t,t+du))L.push(toH(t))}})
+  if(!L.length){el.innerHTML='<p class="vazio">Esse dia está cheio. Escolha outro dia.</p>';return}L.forEach(function(h){var b=document.createElement('button');b.type='button';b.textContent=h;b.onclick=function(){el.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});this.classList.add('on');hsel=h};el.appendChild(b)})}
+$('conf').onclick=async function(){var o=$('ok'),btn=this,nome=$('nome').value.trim(),tel=$('tel').value.trim(),nv='',f=[];
+  if(!sv)f.push('o procedimento');if(!hsel)f.push('o horário');if(nome.length<2)f.push('o seu nome');if(tel.replace(/\D/g,'').length<10)f.push('o seu WhatsApp com DDD');
+  o.style.display='block';if(f.length){o.textContent='Falta '+f.join(', ')+'.';return}
+  btn.disabled=true;o.textContent='Agendando…';
+  try{await carrega();var data=dsel.dataset.data,du=Number(sv.duracao)||60,ini=toMin(hsel);
+    if(ocupado(data,profsDe(sv),ini,ini+du)){btn.disabled=false;o.textContent='Esse horário acabou de ser ocupado. Escolha outro, por favor.';horas();return}
+    await db.collection('pedidos_site').add({nome:nome.slice(0,60),telefone:tel.slice(0,20),servicoId:sv.id,servicoNome:sv.nome,profId:sv.profId,data:data,hora:hsel,duracao:du,nascimento:nv,acrescimo:extra(data),status:'novo',criadoEm:new Date().toISOString()});
+    profsDe(sv).forEach(function(p){meus.push(p+'|'+ini+'|'+(ini+du)+'|'+data)});
+    var dia=dsel.textContent.replace(/(\D+)(\d+)/,'$1 $2');
+    o.innerHTML='Prontinho, '+esc(nome.split(' ')[0])+'! 💗<br>Seu horário de <b>'+esc(sv.nome.replace(/ \(.*\)$/,''))+'</b> ficou para <b>'+esc(dia)+', às '+hsel+'</b>'+(extra(data)?' (com acréscimo de R$ '+extra(data)+')':'')+'.<br>Em alguns minutos chega a confirmação no seu WhatsApp.';
+    horas()}catch(e){console.error(e);o.textContent='Não deu pra agendar agora. Tente de novo em instantes.'}
+  btn.disabled=false};
+/* botão flutuante só aparece fora do topo e fora do agendamento */
+(function(){var vis={};var io=new IntersectionObserver(function(es){es.forEach(function(e){vis[e.target.className||e.target.id]=e.isIntersecting});$('flut').classList.toggle('esc',!!(vis.hero||vis.agendar))},{threshold:.15});io.observe(document.querySelector('.hero'));io.observe($('agendar'))})();
+(async function(){try{await carrega()}catch(e){console.error(e)}cartoes();chips();dias();horarioTxt()})();
+function horarioTxt(){var ex=CAT.expediente||{},j=ex.janelas||{},N=['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'],L=[];[1,2,3,4,5,6,0].forEach(function(d){if(j[d]&&j[d].length)L.push(N[d]+': '+j[d].map(function(x){return x[0].replace(':00','h')+' às '+x[1].replace(':00','h')}).join(' e '))});if(L.length)document.getElementById('horTxt').innerHTML=L.join('<br>')}
 </script>
 </body>
 </html>
